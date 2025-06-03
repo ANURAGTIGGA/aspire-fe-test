@@ -62,6 +62,7 @@ function getImagePath(name: string) {
     margin-bottom: 81px;
     .logo {
       width: 125px;
+      margin-bottom: 19px;
     }
     .tag-line {
       color: rgba(255, 255, 255, 0.3);
