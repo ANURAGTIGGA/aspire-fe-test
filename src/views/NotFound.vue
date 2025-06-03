@@ -5,11 +5,11 @@ const text = "Page Not Found!"
 
 <template>
   <div class="not-found-page">
-    <p>{{ text }}</p>
-
-    <button>
-        Go to Home page.
-    </button>
+    <div class="container py-4 px-3 mx-auto">
+      <h1>Hello, Bootstrap and Vite!</h1>
+      <p>{{ text }}</p>
+      <button class="btn btn-primary">Go to Home page.</button>
+    </div>
   </div>
 </template>
 

@@ -1,0 +1,26 @@
+// Import all of Bootstrap’s CSS
+@import "bootstrap/scss/bootstrap";
+
+:root {
+    font-family: Open sans;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  
+  #app {
+    text-align: center;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  

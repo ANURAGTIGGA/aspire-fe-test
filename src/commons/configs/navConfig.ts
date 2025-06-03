@@ -1,29 +1,29 @@
-const ACTIONS = [
+const NAVIGATIONS = [
     {
         "name": "Home",
-        "icon": "",
+        "icon": "Home",
         "route": "/"
     },
     {
         "name": "Cards",
-        "icon": "",
+        "icon": "Card",
         "route": "/cards"
     },
     {
         "name": "Payments",
-        "icon": "",
+        "icon": "Payments",
         "route": "/payments"
     },
     {
         "name": "Credit",
-        "icon": "",
+        "icon": "Credit",
         "route": "/credit"
     },
     {
         "name": "Settings",
-        "icon": "",
+        "icon": "Account",
         "route": "/settings"
     }
 ];
 
-export default ACTIONS;
+export default NAVIGATIONS;

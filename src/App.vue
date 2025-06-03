@@ -1,33 +1,18 @@
 <script setup lang="ts">
-import ActionBar from './components/ActionBar.vue'
+import SideBar from './components/SideBar.vue'
 </script>
 
 <template>
-  <!-- <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div> -->
-  <ActionBar />
-  <main>
-    <RouterView />
-  </main>
+  <div class="row h-100">
+    <div class="col-3  h-100">
+      <SideBar />
+    </div>
+    <div class="col-9">
+      <main>
+        <RouterView />
+      </main>
+    </div>
+  </div>
 </template>
 
-<style scoped>
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-} */
-</style>
+<style scoped></style>
