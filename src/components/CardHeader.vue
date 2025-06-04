@@ -1,8 +1,24 @@
 <script setup lang="ts">
 import { CURRENCY_MAP } from '../commons/constants';
+import { useCardStore } from '../store/index';
+import Modal from '../commons/components/Modal.vue';
+
+const cardStore = useCardStore();
 
 function getImagePath(name: string) {
   return new URL(`../assets/nav-icons/${name}.svg`, import.meta.url).href;
+}
+
+function addNewCard() {
+    cardStore.addCard({
+        "id": "3",
+        "cardholder": "John Doe",
+        "cardNumber": "1234-5678-9101-1129",
+        "expiryDate": "12/27",
+        "cvv": "209",
+        "networkType": "visa",
+        "cardType": "debit"
+    })
 }
 
 defineProps<{ currency: string }>()
@@ -18,11 +34,12 @@ defineProps<{ currency: string }>()
         <span class="amount">3000</span>
     </div>
     <div class="add-action col-6 text-end">
-        <button class="btn btn-primary new-card-btn">
+        <button class="btn btn-primary new-card-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="addNewCard">
             <img src="../assets/box.svg" class="add-icon" alt="add icon" />
             New Card</button>
     </div>
   </div>
+  <Modal />
 </template>
 
 <style type="scss" scoped>

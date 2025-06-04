@@ -7,17 +7,17 @@ import DebitCards from './DebitCards.vue'
 <template>
     <ul class="nav nav-underline">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane">My debit cards</a>
+            <a class="nav-link active" aria-current="page" id="debit-tab" data-bs-toggle="tab" data-bs-target="#debit-tab-pane">My debit cards</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane">All company cards</a>
+            <a class="nav-link disabled" aria-disabled="true" id="all-cards-tab" data-bs-toggle="tab" data-bs-target="#all-cards-tab-pane">All company cards</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="tab-pane fade show active" id="debit-tab-pane" role="tabpanel" aria-labelledby="debit-tab" tabindex="0">
             <DebitCards />
         </div>
-        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...2...</div>
+        <div class="tab-pane fade" id="all-cards-tab-pane" role="tabpanel" aria-labelledby="all-cards-tab" tabindex="0"></div>
     </div>
 </template>
 

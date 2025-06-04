@@ -15,4 +15,9 @@ import SideBar from './components/SideBar.vue'
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  overflow-y: scroll;
+  height: 100vh;
+}
+</style>

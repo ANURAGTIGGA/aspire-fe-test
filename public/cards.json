@@ -1,0 +1,29 @@
+{ "cards": [
+    {
+        "id": "0",
+        "cardholder": "Anurag Aron Tigga",
+        "cardNumber": "1234-5678-9101-1121",
+        "expiryDate": "12/27",
+        "cvv": "209",
+        "networkType": "visa",
+        "cardType": "debit"
+    },
+    {
+        "id": "1",
+        "cardholder": "Mark Henry",
+        "cardNumber": "1234-5678-9101-1009",
+        "expiryDate": "12/27",
+        "cvv": "209",
+        "networkType": "visa",
+        "cardType": "debit"
+    },
+    {
+        "id": "2",
+        "cardholder": "Bruce Wayne",
+        "cardNumber": "1234-5678-9101-2021",
+        "expiryDate": "12/27",
+        "cvv": "209",
+        "networkType": "visa",
+        "cardType": "debit"
+    }
+]}

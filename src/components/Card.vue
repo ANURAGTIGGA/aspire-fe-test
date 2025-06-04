@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import MaskCardNumber from './MaskCardNumber.vue';
-//defineProps<{ cardnumber: string }>()
+
+interface Card {
+    "id": string;
+    "cardholder": string;
+    "cardNumber": string;
+    "expiryDate": string;
+    "cvv": string;
+    "networkType": string;
+    "cardType": string;
+}
+
+defineProps<{ cardDetails: Card }>()
 
 </script>
 
@@ -10,16 +21,16 @@ import MaskCardNumber from './MaskCardNumber.vue';
             <div class="card-logo">
                 <img src="../assets/logos/AspireLogoWhite.svg" class="logo" alt="aspire logo" />
             </div>
-            <div class="cardholder">Mark Henry</div>
+            <div class="cardholder">{{ cardDetails.cardholder }}</div>
             <div>
-                <MaskCardNumber cardnumber="2020" />
+                <MaskCardNumber :cardnumber="cardDetails.cardNumber.split('-')[3]" />
             </div>
             <div class="card-date-cvv d-flex">
-                <div class="expiry">Thru: 12/27</div>
+                <div class="expiry">Thru: {{ cardDetails.expiryDate }}</div>
                 <div class="cvv">CVV: ***</div>
             </div>
             <div class="card-logo">
-                <img src="../assets/logos/VisaLogo.svg" class="logo" alt="aspire logo" />
+                <img v-if="cardDetails.networkType === 'visa'" src="../assets/logos/VisaLogo.svg" class="logo" alt="aspire logo" />
             </div>
         </div>
     </div>

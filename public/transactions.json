@@ -38,25 +38,5 @@
         "merchantName": "Hamleys",
         "merchantType": "retail",
         "cardType": "debit"
-    },
-    {
-        "id": "05",
-        "amount": "450",
-        "currency": "SGD",
-        "type": "debit",
-        "date": "20 May 2020",
-        "merchantName": "Indigo",
-        "merchantType": "travel",
-        "cardType": "debit"
-    },
-    {
-        "id": "06",
-        "amount": "300",
-        "currency": "SGD",
-        "type": "debit",
-        "date": "20 May 2020",
-        "merchantName": "Air Asia",
-        "merchantType": "travel",
-        "cardType": "debit"
     }
 ]}
