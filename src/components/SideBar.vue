@@ -20,9 +20,9 @@ function getImagePath(name: string) {
       </p>
     </div>
     <nav class="navigation-wrap">
-      <div v-for="action of navigations">
-        <img :src="getImagePath(action.icon)" class="nav-icon" :alt="action.icon" />
-        <RouterLink class="nav-item" :to="action.route">{{ action.name }}</RouterLink>
+      <div v-for="nav of navigations">
+        <img :src="getImagePath(nav.icon)" class="nav-icon" :alt="nav.icon" />
+        <RouterLink class="nav-item" :to="nav.route">{{ nav.name }}</RouterLink>
       </div>
     </nav>
   </div>

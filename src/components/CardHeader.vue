@@ -28,40 +28,42 @@ defineProps<{ currency: string }>()
 <style type="scss" scoped>
 .card-header {
     margin-bottom: 34px;
-}
-.balance-details {
-    .balance-details-title {
-        color: #222222;
-        font-size: 14px;
-        margin-bottom: 0;
+    
+    .balance-details {
+        .balance-details-title {
+            color: #222222;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        .amount {
+            font-size: 26px;
+            font-weight: 700;
+            color: #222222;
+            vertical-align: middle;
+        }
+        .currency {
+            width: 40px;
+            height: 24px;
+            background-color: #01D167;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #FFFFFF;
+            margin-right: 12px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
     }
-    .amount {
-        font-size: 26px;
-        font-weight: 700;
-        color: #222222;
-        vertical-align: middle;
-    }
-    .currency {
-        width: 40px;
-        height: 24px;
-        background-color: #01D167;
-        border-radius: 4px;
+    .new-card-btn {
+        background-color: #325BAF;
+        height: 35px;
+        width: 109px;
         font-size: 13px;
-        color: #FFFFFF;
-        margin-right: 12px;
-        display: inline-block;
-        vertical-align: middle;
-        text-align: center;
-    }
-}
-.new-card-btn {
-    background-color: #325BAF;
-    height: 35px;
-    width: 109px;
-    font-size: 13px;
-    line-height: 18px;
-    img.add-icon {
-        vertical-align: bottom;
+        line-height: 18px;
+        margin-bottom: 7px;
+        img.add-icon {
+            vertical-align: bottom;
+        }
     }
 }
 </style>

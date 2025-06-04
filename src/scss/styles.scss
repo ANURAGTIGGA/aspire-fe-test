@@ -2,8 +2,26 @@
 @import "bootstrap/scss/bootstrap";
 
 :root {
-    font-family: Open sans;
-  }
+    font-family: 'OpenSans-Regular', sans-serif;
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('@/assets/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('@/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'avenir-next-demi-bold';
+    src: url('@/assets/fonts/avenir-next-demi-bold.ttf') format('truetype');
+    font-style: normal;
+}
   
   body {
     margin: 0;
