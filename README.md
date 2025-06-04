@@ -19,4 +19,7 @@
 > Click on the "Cards" nav on the left Sidebar
 
 
+### Link to the hosted app
+
+> https://aspire-fe-test-tau.vercel.app/cards
 
