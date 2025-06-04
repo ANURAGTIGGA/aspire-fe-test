@@ -42,6 +42,6 @@ import DebitCards from './DebitCards.vue'
     border-radius: 8px;
     box-shadow: 0px 2px 12px #00000014;
     border: 1px solid #FCFCFC;
-    padding: 40px;
+    padding: 0 40px 40px 40px;
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import Card from './Card.vue';
 import Actions from './Actions.vue';
 import TransactionBar from './TransactionBar.vue';
@@ -10,6 +10,17 @@ import { useCardStore } from '../store/index';
 //defineProps<{ currency: string }>()
 
 const cardStore = useCardStore();
+const carouselRef = ref<HTMLElement | null>(null);
+
+function actionHandler() {
+    if (carouselRef.value) {
+        const activeItem = carouselRef.value.querySelector('.carousel-item.active');
+        const allItems = carouselRef.value.querySelectorAll('.carousel-item');
+
+        const activeIndex = Array.from(allItems).indexOf(activeItem as Element);
+        cardStore.updateCardFreezeStatus(String(activeIndex))
+    }
+}
 
 onMounted(async () => {
   try {
@@ -29,9 +40,9 @@ onMounted(async () => {
 
 <template>
     <div class="debit-cards-container row">
-        <div class="col-7">
+        <div class="col-6">
             <div>
-                <div id="cardCarousel" class="carousel slide">
+                <div ref="carouselRef" id="cardCarousel" class="carousel slide">
                     <div class="carousel-indicators">
                         <button v-for="card,index of cardStore.cardList"
                                 :key="card.id"
@@ -53,17 +64,17 @@ onMounted(async () => {
                         </div>
                     </div>
                 </div>
-                <Actions />
+                <Actions :onActionClick="actionHandler" />
             </div>
         </div>
-        <div class="col-5">
-            <Accordian title="Card Details" id="cards">
+        <div class="col-6 accordian-wrap">
+            <Accordian title="Card Details" id="cards" :open="false">
                 <template #header-img>
                     <img src="../assets/card.svg" class="logo" alt="aspire logo" />
                 </template>
             </Accordian>
 
-            <Accordian title="Recent Transactions" id="transactions">
+            <Accordian title="Recent Transactions" id="transactions" :open="true"> 
                 <template #header-img>
                     <img src="../assets/transaction.svg" class="logo" alt="aspire logo" />
                 </template>
@@ -81,8 +92,22 @@ onMounted(async () => {
 </template>
 
 <style type="scss" scoped>
+.accordian-wrap {
+    padding-top: 60px;
+}
 .carousel-indicators [data-bs-target] {
     background-color: #01D167;
+}
+.carousel-indicators {
+    button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        &.active {
+            width: 16px;
+            border-radius: 45%;
+        }
+    }
 }
 .transaction-wrap {
     border-bottom: 1px solid #F5F5F5;

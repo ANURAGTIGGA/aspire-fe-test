@@ -1,21 +1,9 @@
 <script setup lang="ts">
 import { TRANSACTION } from '../commons/constants';
+import type { TransactionType } from '../commons/typeDefinitions';
 
-interface Transaction {
-    "id": string;
-    "amount": string;
-    "currency": string;
-    "type": string;
-    "date": string;
-    "merchantName": string;
-    "merchantType": string;
-    "cardType": string;
-}
+defineProps<{ transaction: TransactionType }>()
 
-defineProps<{ transaction: Transaction }>()
-
-//const actionsList = ACTIONS;
-const relativePath = "../assets/transaction-icons/";
 const iconMap = TRANSACTION.ICON_MAP;
 
 function getImagePath(name: string) {
@@ -39,7 +27,9 @@ function getImagePath(name: string) {
                 <span>Refund on debit card</span>
             </div>
         </div>
-        <div class="amount-details" :style="{ color: transaction.type === 'credit' ? '#01D167' : '#222222'}">{{transaction.type === "credit" ? "+" : "-"}} S$ 150</div> 
+        <div class="amount-details" :style="{ color: transaction.type === 'credit' ? '#01D167' : '#222222'}">{{transaction.type === "credit" ? "+" : "-"}} S$ 150
+            <img src="../assets/next.svg" class="transaction-details-icon" alt="transaction-details" />
+        </div> 
     </div>
 </template>
 
@@ -81,6 +71,9 @@ function getImagePath(name: string) {
     .amount-details {
         font-size: 14px;
         font-family: 'OpenSans-Bold', sans-serif;
+        .transaction-details-icon {
+            padding: 0 0 2px 10px;
+        }
     }
 }
 </style>

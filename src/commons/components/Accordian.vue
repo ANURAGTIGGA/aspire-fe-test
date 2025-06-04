@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{ title: string, id: string }>();
+const props = defineProps<{ title: string, id: string, open: boolean }>();
 
 const accordianIdHash = "#" + props.id;
 
@@ -9,7 +9,9 @@ const accordianIdHash = "#" + props.id;
     <div class="accordion">
         <div class="accordion-item">
             <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="accordianIdHash" aria-expanded="false" aria-controls="collapseTwo">
+                <button
+                    :class="open ? 'accordion-button' : 'accordion-button collapsed'"
+                    type="button" data-bs-toggle="collapse" :data-bs-target="accordianIdHash" aria-expanded="false" aria-controls="collapseTwo">
                     <div class="header-icon">
                         <slot name="header-img"></slot>
                     </div>
@@ -18,7 +20,7 @@ const accordianIdHash = "#" + props.id;
                     </div>
                 </button>
             </h2>
-            <div :id="id" class="accordion-collapse collapse" data-bs-parent="#accordion">
+            <div :id="id" :class="open ? 'accordion-collapse collapse show' : 'accordion-collapse collapse'" data-bs-parent="#accordion">
                 <div class="accordion-body p-0">
                     <slot></slot>
                 </div>
@@ -42,5 +44,13 @@ const accordianIdHash = "#" + props.id;
         font-family: 'OpenSans-Regular', sans-serif;
         color: #0C365A;
     }
+}
+.accordion-button::after {
+    background-image: url('../../assets/down-arrow.svg');
+    transform: none;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url('../../assets/up-arrow.svg');
+    transform: none;
 }
 </style>

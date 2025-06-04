@@ -6,6 +6,7 @@ export interface CardType {
     "cvv": string;
     "networkType": string;
     "cardType": string;
+    "freeze": boolean;
 }
 
 export interface TransactionType {

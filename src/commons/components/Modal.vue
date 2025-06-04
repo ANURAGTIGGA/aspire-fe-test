@@ -1,6 +1,21 @@
 <script setup lang="ts">
-//const props = defineProps<{ title: string, id: string }>();
+import { ref } from 'vue';
+import { useCardStore } from '../../store/index';
 
+const props = defineProps<{ onAddNew: Function }>()
+
+const closeRef = ref<HTMLButtonElement | null>(null);
+const cardStore = useCardStore();
+
+function setCardName(e: Event) {
+    const target = e.target as HTMLInputElement;
+    cardStore.setCardName(target.value);
+}
+
+function addNewCardHandler() {
+    props.onAddNew();
+    closeRef.value?.click();
+}
 
 </script>
 
@@ -15,12 +30,17 @@
             <div class="modal-body">
                 <div class="mb-3 text-start">
                     <label for="name" class="form-label">Card Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter Name here ...">
+                    <input type="text" 
+                            class="form-control" 
+                            id="name" 
+                            placeholder="Enter Name here ..."
+                            @change="setCardName"
+                    >
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+                <button ref="closeRef" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" @click="addNewCardHandler">Add</button>
             </div>
             </div>
         </div>

@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import router from './router';
 import App from './App.vue';
-// Import our custom CSS
 import './scss/styles.scss';
 import { createPinia } from 'pinia';
 
@@ -13,4 +12,5 @@ const pinia = createPinia();
 createApp(App)
     .use(router)
     .use(pinia)
+    .use(bootstrap)
     .mount('#app')
