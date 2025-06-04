@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TRANSACTION } from '../commons/constants';
-import type { TransactionType } from '../commons/typeDefinitions';
+import type { TransactionType, MerchantType } from '../commons/typeDefinitions';
 
 defineProps<{ transaction: TransactionType }>()
 
@@ -14,7 +14,7 @@ function getImagePath(name: string) {
 
 <template>
     <div class="transaction-bar d-flex justify-content-evenly">
-        <div class="icon d-flex justify-content-center align-items-center" :style="{ backgroundColor: iconMap[transaction.merchantType] }">
+        <div class="icon d-flex justify-content-center align-items-center" :style="{ backgroundColor: iconMap[transaction.merchantType as MerchantType] }">
             <img :src="getImagePath(transaction.merchantType)" class="transaction-icon" :alt="transaction.merchantType" />
         </div>
         <div class="transaction-details d-flex flex-column justify-content-center align-items-start">

@@ -19,3 +19,7 @@ export interface TransactionType {
     "merchantType": string;
     "cardType": string;
 }
+
+export type Currency = "SGD" | "USD" | "INR";
+
+export type MerchantType = "retail" | "travel" | "ecommerce";

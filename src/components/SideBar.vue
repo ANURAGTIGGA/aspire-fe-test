@@ -2,7 +2,6 @@
 import NAVIGATIONS from '../commons/configs/navConfig.ts';
 
 const navigations = NAVIGATIONS;
-const relativePath = "../assets/nav-icons/";
 
 function getImagePath(name: string) {
   return new URL(`../assets/nav-icons/${name}.svg`, import.meta.url).href;

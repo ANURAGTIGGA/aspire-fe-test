@@ -2,7 +2,6 @@
 import CardHeader from '../components/CardHeader.vue';
 import CardContainer from '../components/CardContainer.vue';
 
-const title = "CARDS";
 </script>
 
 <template>

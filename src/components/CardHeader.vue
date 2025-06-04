@@ -3,6 +3,7 @@ import { CURRENCY_MAP } from '../commons/constants';
 import { generateNewCardDetails } from '../utility/helper';
 import { useCardStore } from '../store/index';
 import Modal from '../commons/components/Modal.vue';
+import type { Currency } from '../commons/typeDefinitions';
 
 const cardStore = useCardStore();
 
@@ -16,7 +17,7 @@ function addNewCard() {
     })
 }
 
-defineProps<{ currency: string }>()
+defineProps<{ currency: Currency }>()
 
 </script>
 
