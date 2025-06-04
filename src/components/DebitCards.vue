@@ -7,6 +7,8 @@ import Accordian from '../commons/components/Accordian.vue';
 import { fetchCards, fetchTransactions } from '../service/index';
 import type { CardType, TransactionType } from '../commons/typeDefinitions';
 import { useCardStore } from '../store/index';
+import CardLoader from '../commons/components/CardLoader.vue';
+import TransactionBarLoader from '../commons/components/TransactionBarLoader.vue';
 //defineProps<{ currency: string }>()
 
 const cardStore = useCardStore();
@@ -54,12 +56,14 @@ onMounted(async () => {
                                 :aria-label="'slide ' + card.id"></button>
                     </div>
                     <div class="carousel-inner">
-                        <div 
+                        <CardLoader v-if="cardStore.cardList.length === 0" />
+                        <div v-else
                             class="carousel-item" 
                             :class="{ active: index === 0 }"
                             :key="card.id"
                             v-for="card,index of cardStore.cardList"
                         >
+                            
                             <Card :cardDetails="card"/>
                         </div>
                     </div>
@@ -78,7 +82,12 @@ onMounted(async () => {
                 <template #header-img>
                     <img src="../assets/transaction.svg" class="logo" alt="aspire logo" />
                 </template>
-                <div v-for="transaction of cardStore.transactionsList" class="transaction-wrap">
+                <TransactionBarLoader v-if="cardStore.transactionsList.length === 0" />
+                <div 
+                    v-else
+                    v-for="transaction of cardStore.transactionsList" 
+                    class="transaction-wrap"
+                >
                     <TransactionBar :transaction="transaction" />
                 </div>
                 <template #footer>

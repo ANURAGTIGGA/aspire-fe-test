@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MaskCardNumber from './MaskCardNumber.vue';
+import CardLoader from '../commons/components/CardLoader.vue';
 import type { CardType } from '../commons/typeDefinitions';
 
 defineProps<{ cardDetails: CardType }>()

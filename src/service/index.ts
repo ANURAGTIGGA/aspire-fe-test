@@ -4,7 +4,7 @@ export function fetchCards() {
         const response = await fetch('/cards.json');
         const data = await response.json();
       resolve(data.cards);
-    }, 500); // simulate network delay
+    }, 550); // simulate network delay
   });
 }
 
@@ -14,6 +14,6 @@ export function fetchTransactions() {
         const response = await fetch('/transactions.json');
         const data = await response.json();
       resolve(data.transactions);
-    }, 300); // simulate network delay
+    }, 400); // simulate network delay
   });
 }
