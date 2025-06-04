@@ -12,7 +12,7 @@ function getImagePath(name: string) {
 </script>
 
 <template>
-    <div class="actions-wrap d-flex">
+    <div class="actions-wrap d-flex justify-content-evenly">
         <div v-for="action of actionsList" class="action d-flex flex-column justify-content-center align-items-center">
             <img :src="getImagePath(action.icon)" class="action-icon" :alt="action.icon" />
             <span>{{ action.name }}</span>
@@ -27,7 +27,13 @@ function getImagePath(name: string) {
     background-color: #EDF3FF;
     border-radius: 16px;
     .action {
+        flex-basis: 60px;
+        gap: 7px;
+        line-height: 14px;
         cursor: pointer;
+        font-family: 'OpenSans-Regular', sans-serif;
+        font-size: 13px;
+        color: #0C365A;
         img {
             height: 32px;
             width: 32px;

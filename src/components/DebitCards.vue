@@ -1,7 +1,24 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import Card from './Card.vue';
 import Actions from './Actions.vue';
+import TransactionBar from './TransactionBar.vue';
 //defineProps<{ currency: string }>()
+
+const transactions = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/transactions.json');
+    if (!response.ok) {
+      throw new Error('Failed to fetch users');
+    }
+    const data = await response.json();
+    transactions.value = data.transactions;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
 
 </script>
 
@@ -40,7 +57,7 @@ import Actions from './Actions.vue';
                         </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
+                        <div class="accordion-body p-0">
                             <strong>This is the first item’s accordion body.</strong>
                         </div>
                         </div>
@@ -52,8 +69,13 @@ import Actions from './Actions.vue';
                         </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <strong>This is the second item’s accordion body.</strong>
+                        <div class="accordion-body p-0">
+                            <div v-for="transaction of transactions" class="transaction-wrap">
+                                <TransactionBar :transaction="transaction" />
+                            </div>
+                        </div>
+                        <div class="view-more">
+                            View all card transactions
                         </div>
                         </div>
                     </div>
@@ -70,4 +92,18 @@ import Actions from './Actions.vue';
 /* .carousel-indicators {
     bottom: -40px;
 } */
+.transaction-wrap {
+    border-bottom: 1px solid #F5F5F5;
+    &:last-child {
+        border-bottom: 0;
+    }
+}
+.view-more {
+    font-size: 13px;
+    font-family: 'OpenSans-SemiBold', sans-serif;
+    color: #01D167;
+    background: #EDFFF5;
+    padding: 15px;
+    border: 1px solid #DDFFEC;
+}
 </style>

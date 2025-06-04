@@ -1,26 +1,33 @@
 // Import all of Bootstrap’s CSS
 @import "bootstrap/scss/bootstrap";
 
-:root {
-    font-family: 'OpenSans-Regular', sans-serif;
-}
-
 @font-face {
     font-family: 'OpenSans-Regular';
-    src: url('@/assets/fonts/OpenSans-Regular.ttf') format('truetype');
+    src: url('../assets/fonts/OpenSans-Regular.ttf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: url('../assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
     font-family: 'OpenSans-Bold';
-    src: url('@/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+    src: url('../assets/fonts/OpenSans-Bold.ttf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
     font-family: 'avenir-next-demi-bold';
-    src: url('@/assets/fonts/avenir-next-demi-bold.ttf') format('truetype');
+    src: url('../assets/fonts/avenir-next-demi-bold.ttf') format('truetype');
     font-style: normal;
+}
+
+:root {
+  font-family: 'OpenSans-Regular', sans-serif;
 }
   
   body {

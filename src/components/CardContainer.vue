@@ -10,7 +10,7 @@ import DebitCards from './DebitCards.vue'
             <a class="nav-link active" aria-current="page" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane">My debit cards</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " aria-disabled="false" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane">All company cards</a>
+            <a class="nav-link disabled" aria-disabled="true" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane">All company cards</a>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">

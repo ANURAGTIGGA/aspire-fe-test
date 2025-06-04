@@ -1,0 +1,62 @@
+{ "transactions": [
+    {
+        "id": "01",
+        "amount": "150",
+        "currency": "SGD",
+        "type": "credit",
+        "date": "20 May 2020",
+        "merchantName": "Hamleys",
+        "merchantType": "retail",
+        "cardType": "debit"
+    },
+    {
+        "id": "02",
+        "amount": "150",
+        "currency": "SGD",
+        "type": "debit",
+        "date": "20 May 2020",
+        "merchantName": "Hamleys",
+        "merchantType": "travel",
+        "cardType": "debit"
+    },
+    {
+        "id": "03",
+        "amount": "150",
+        "currency": "SGD",
+        "type": "debit",
+        "date": "20 May 2020",
+        "merchantName": "Hamleys",
+        "merchantType": "ecommerce",
+        "cardType": "debit"
+    },
+    {
+        "id": "04",
+        "amount": "150",
+        "currency": "SGD",
+        "type": "debit",
+        "date": "20 May 2020",
+        "merchantName": "Hamleys",
+        "merchantType": "retail",
+        "cardType": "debit"
+    },
+    {
+        "id": "05",
+        "amount": "450",
+        "currency": "SGD",
+        "type": "debit",
+        "date": "20 May 2020",
+        "merchantName": "Indigo",
+        "merchantType": "travel",
+        "cardType": "debit"
+    },
+    {
+        "id": "06",
+        "amount": "300",
+        "currency": "SGD",
+        "type": "debit",
+        "date": "20 May 2020",
+        "merchantName": "Air Asia",
+        "merchantType": "travel",
+        "cardType": "debit"
+    }
+]}
