@@ -20,8 +20,14 @@ defineProps<{ cardDetails: CardType }>()
                 <MaskCardNumber :cardnumber="cardDetails.cardNumber.split('-')[3]" />
             </div>
             <div class="card-date-cvv d-flex">
-                <div class="expiry">Thru: {{ cardDetails.expiryDate }}</div>
-                <div class="cvv">CVV: ***</div>
+                <div class="expiry d-flex align-items-center">
+                    <div class="label">Thru:</div>
+                    <div class="date">{{ cardDetails.expiryDate }}</div>
+                </div>
+                <div class="cvv d-flex align-items-center">
+                    <div class="label">CVV:</div>
+                    <div class="cvv-masked">***</div>
+                </div>
             </div>
             <div class="card-logo">
                 <img v-if="cardDetails.networkType === 'visa'" src="../assets/logos/VisaLogo.svg" class="logo" alt="aspire logo" />
@@ -52,9 +58,28 @@ defineProps<{ cardDetails: CardType }>()
         .cardholder {
             font-family: 'OpenSans-Bold', sans-serif;
             font-size: 24px;
+                padding: 27px 0 22px 0;
         }
         .card-date-cvv{
             gap: 27px;
+            padding-top: 12px;
+            .expiry, .cvv {
+                height: 20px;
+            }
+            .label {
+                font-size: 13px;
+                font-family: 'OpenSans-Bold', sans-serif;
+                margin-right: 5px;
+            }
+            .date {
+                font-size: 13px;
+                font-family: 'OpenSans-Bold', sans-serif;
+            }
+            .cvv-masked {
+                font-size: 24px;
+                font-family: 'OpenSans-Bold', sans-serif;
+                margin-top: 5px;
+            }
         }
         .show-card-no {
             color: #01D167;
